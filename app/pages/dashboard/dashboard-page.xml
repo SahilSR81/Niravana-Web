@@ -1,0 +1,43 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <GridLayout rows="auto, *" class="p-4">
+        <StackLayout row="0" class="mb-4">
+            <Label text="{{ greeting }}" class="text-2xl font-bold mb-2" />
+            <Label text="{{ date }}" class="text-gray-600" />
+        </StackLayout>
+
+        <ScrollView row="1">
+            <StackLayout>
+                <!-- Mood Entry Section -->
+                <StackLayout class="bg-purple-100 rounded-lg p-4 mb-4">
+                    <Label text="How are you feeling today?" class="text-lg font-semibold mb-2" />
+                    <GridLayout columns="*, *, *, *, *" class="mb-4">
+                        <Image tap="{{ onMoodSelect }}" mood="1" src="~/assets/mood-1.png" class="h-12" col="0" />
+                        <Image tap="{{ onMoodSelect }}" mood="2" src="~/assets/mood-2.png" class="h-12" col="1" />
+                        <Image tap="{{ onMoodSelect }}" mood="3" src="~/assets/mood-3.png" class="h-12" col="2" />
+                        <Image tap="{{ onMoodSelect }}" mood="4" src="~/assets/mood-4.png" class="h-12" col="3" />
+                        <Image tap="{{ onMoodSelect }}" mood="5" src="~/assets/mood-5.png" class="h-12" col="4" />
+                    </GridLayout>
+                </StackLayout>
+
+                <!-- Quick Actions -->
+                <GridLayout columns="*, *" rows="auto, auto" class="mb-4">
+                    <Button text="Daily Journal" tap="{{ onJournal }}" class="btn btn-primary m-1" row="0" col="0" />
+                    <Button text="Meditation" tap="{{ onMeditation }}" class="btn btn-primary m-1" row="0" col="1" />
+                    <Button text="Exercises" tap="{{ onExercises }}" class="btn btn-primary m-1" row="1" col="0" />
+                    <Button text="Resources" tap="{{ onResources }}" class="btn btn-primary m-1" row="1" col="1" />
+                </GridLayout>
+
+                <!-- Mood History -->
+                <StackLayout class="bg-white rounded-lg p-4 mb-4">
+                    <Label text="Your Week" class="text-lg font-semibold mb-2" />
+                    <GridLayout rows="auto" columns="*, *, *, *, *, *, *">
+                        <StackLayout repeat="7" class="text-center">
+                            <Label text="{{ day }}" class="text-sm" />
+                            <Image src="{{ moodIcon }}" class="h-8" />
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>

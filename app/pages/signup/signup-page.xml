@@ -1,0 +1,24 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ScrollView>
+        <StackLayout class="p-6">
+            <Label text="Create Account" class="text-3xl font-bold mb-6 text-center" />
+            
+            <TextField hint="Username" text="{{ username }}" class="input" />
+            <TextField hint="Password" text="{{ password }}" secure="true" class="input" />
+            <TextField hint="Full Name" text="{{ name }}" class="input" />
+            <DatePicker date="{{ birthDate }}" class="input" />
+            <TextField hint="Age" text="{{ age }}" keyboardType="number" class="input" />
+            
+            <StackLayout visibility="{{ showRelationshipStatus ? 'visible' : 'collapsed' }}">
+                <Label text="Relationship Status" class="mb-2" />
+                <ListPicker items="{{ relationshipOptions }}" selectedIndex="{{ selectedRelationshipIndex }}" class="input" />
+            </StackLayout>
+            
+            <TextField hint="Occupation" text="{{ occupation }}" class="input" />
+            <TextView hint="Hobbies/Interests" text="{{ hobbies }}" class="input h-20" />
+            
+            <Button text="Sign Up" tap="{{ onSignUp }}" class="btn btn-primary mt-4" />
+            <Button text="Already have an account? Login" tap="{{ onGoToLogin }}" class="btn btn-secondary mt-2" />
+        </StackLayout>
+    </ScrollView>
+</Page>

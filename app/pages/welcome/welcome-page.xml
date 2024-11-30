@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <StackLayout class="p-8 text-center">
+        <Image src="~/assets/nirvana-logo.png" class="h-32 w-32 mx-auto mb-8" />
+        <Label text="Welcome to Nirvana" class="text-4xl font-bold mb-4" />
+        <Label text="Your Journey to Mental Wellness" class="text-xl text-gray-600 mb-8" />
+        
+        <Button text="Get Started" tap="{{ onGetStarted }}" class="btn btn-primary mb-4" />
+        <Button text="Login" tap="{{ onLogin }}" class="btn btn-secondary" />
+    </StackLayout>
+</Page>

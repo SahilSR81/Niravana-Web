@@ -1,0 +1,11 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <StackLayout class="p-6">
+        <Label text="Welcome Back" class="text-3xl font-bold mb-6 text-center" />
+        
+        <TextField hint="Username" text="{{ username }}" class="input" />
+        <TextField hint="Password" text="{{ password }}" secure="true" class="input" />
+        
+        <Button text="Login" tap="{{ onLogin }}" class="btn btn-primary mt-4" />
+        <Button text="New user? Sign Up" tap="{{ onGoToSignup }}" class="btn btn-secondary mt-2" />
+    </StackLayout>
+</Page>
